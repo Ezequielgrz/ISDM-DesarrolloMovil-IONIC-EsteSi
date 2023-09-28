@@ -1,0 +1,7 @@
+{
+  "name": "EsteSi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
