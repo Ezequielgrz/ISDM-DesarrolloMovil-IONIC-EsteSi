@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ArmaduraPageRoutingModule } from './armadura-routing.module';
 
 import { ArmaduraPage } from './armadura.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ArmaduraPageRoutingModule
+    ArmaduraPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [ArmaduraPage]
 })

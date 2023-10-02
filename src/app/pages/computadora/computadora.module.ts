@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ComputadoraPageRoutingModule } from './computadora-routing.module';
 
 import { ComputadoraPage } from './computadora.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComputadoraPageRoutingModule
+    ComputadoraPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ComputadoraPage]
 })

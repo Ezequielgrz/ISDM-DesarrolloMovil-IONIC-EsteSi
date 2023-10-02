@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PerroPageRoutingModule } from './perro-routing.module';
 
 import { PerroPage } from './perro.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PerroPageRoutingModule
+    PerroPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [PerroPage]
 })

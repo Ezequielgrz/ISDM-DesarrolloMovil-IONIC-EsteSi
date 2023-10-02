@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PizarronPageRoutingModule } from './pizarron-routing.module';
 
 import { PizarronPage } from './pizarron.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PizarronPageRoutingModule
+    PizarronPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [PizarronPage]
 })

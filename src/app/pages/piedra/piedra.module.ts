@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PiedraPageRoutingModule } from './piedra-routing.module';
 
 import { PiedraPage } from './piedra.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PiedraPageRoutingModule
+    PiedraPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [PiedraPage]
 })
