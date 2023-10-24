@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Personas } from 'src/app/interfaces/personas';
+import { FuncionesService } from 'src/app/funciones.services'; 
+
 
 @Component({
   selector: 'app-armadura',
@@ -15,7 +17,7 @@ export class ArmaduraPage implements OnInit {
     {nombre:"Leandro", apellido: "Castillo", edad:18,estado:true}
   ];
 
-  constructor() { }
+  constructor(private funcionesService: FuncionesService) {}
 
   recorrerLista():void{
     this.listaPersonas.forEach(persona=>{
@@ -27,11 +29,54 @@ export class ArmaduraPage implements OnInit {
     })
   }
   esMayorEdad(edad:number):string{
-    return edad>=21?"Es mayor de edad":"No es mayor de edad";
+    return edad>=18?"Es mayor de edad":"No es mayor de edad";
   }
+
+
+  // a. Saludo con nombre
+  saludoTardes(nombre: string): string {
+    return `Buenas tardes, ${nombre}`;
+  }
+    
+  // b. Multiplicación de dos números
+  multiplicar(num1: number, num2: number): number {
+    return num1 * num2;
+  }
+    
+  // c. Suma de 3 números
+  sumaTresNumeros(num1: number, num2: number, num3: number): number {
+    return num1 + num2 + num3;
+  }
+  
+  // d. Verificar si un número es mayor a 18
+  esMayorQue18(numero: number): boolean {
+    return numero > 18;
+  }
+    
+  saludarPersonas(personas: Personas[]): void {
+    personas.forEach((persona) => {
+      console.log(`Buenas tardes, ${persona.nombre}`);
+    });
+  }
+    
+  mostrarMayoresDeEdad(personas: Personas[]): void {
+    personas.forEach((persona) => {
+      if (persona.edad >= 18) {
+        console.log(`${persona.nombre} es mayor de edad.`);
+      }
+    })
+  };
+    
+
 
   ngOnInit() {
     this.recorrerLista()
+    console.log(this.esMayorEdad(15))
+    console.log(this.saludoTardes('Ezequiel'))
+    console.log(this.sumaTresNumeros(5,10,15))
+    console.log(this.esMayorQue18(20))
+    this.saludarPersonas(this.listaPersonas)
+    this.mostrarMayoresDeEdad(this.listaPersonas)
   }
 
 }

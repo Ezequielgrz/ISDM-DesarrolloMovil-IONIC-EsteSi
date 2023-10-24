@@ -1,3 +1,41 @@
-<ion-content [fullscreen]="true">
-  <app-header></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Personas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="agregarPersona()">
+    <ion-item>
+      <ion-input aria-label="Nombre" type="text" [(ngModel)]="nuevaPersona.nombre" name="nombre" required></ion-input>
+    </ion-item>
+    <ion-item>
+      
+      <ion-input aria-label="Apellido" type="text" [(ngModel)]="nuevaPersona.apellido" name="apellido" required></ion-input>
+    </ion-item>
+    <ion-item>
+      
+      <ion-input aria-label="Edad" type="number" [(ngModel)]="nuevaPersona.edad" name="edad" required></ion-input>
+    </ion-item>
+    <ion-item>
+      
+      <ion-select aria-label="Estado" [(ngModel)]="nuevaPersona.estado" name="estado" required>
+        <ion-select-option value="activo">Activo</ion-select-option>
+        <ion-select-option value="inactivo">Inactivo</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="full" type="submit">Agregar Persona</ion-button>
+  </form>
+
+  <ion-list>
+    <ion-card *ngFor="let persona of personas">
+      <ion-card-header>
+        <ion-card-title>{{ persona.nombre }} {{ persona.apellido }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Edad: {{ persona.edad }}</p>
+        <p>Estado: {{ persona.estado }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

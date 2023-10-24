@@ -1,7 +1,43 @@
-
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Habla con nosotros
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-header></app-header>
+  <div>
+    <form>
+      <ion-input label="Nombre" 
+        labelPlacement="floating" 
+        [counter]="true" 
+        maxlength="20" 
+        style="text-indent: 1em;">
+      </ion-input>
+  
+      <ion-input
+        id="custom-input"
+        label="Email"
+        labelPlacement="floating"
+        [counter]="true"
+        maxlength="50" 
+        style="text-indent: 1em;"
+      ></ion-input>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+      <ion-input
+      label="Número de teléfono"
+      labelPlacement="floating"
+      placeholder="+54 (xxx) xxx-xxxx"
+      style="text-indent: 1em;"
+    ></ion-input>
+    <ion-button expand="full">ENVIAR</ion-button>
+    </form>
+    <br>
+    <a src="https://www.google.com" style="text-indent: 1em;"> Preguntas frecuentes</a>
+    <br>
+
+
+  </div>
+  
 </ion-content>
